@@ -68,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Routes Sample"),),
+      appBar: AppBar(title: const Text("Routes Sample"),),
       body: Center(
         child: Column(
           children: <Widget>[
@@ -76,13 +76,13 @@ class _MyHomePageState extends State<MyHomePage> {
               Navigator.of(context).push(MaterialPageRoute(builder: ((context) {
                 return FirstScreen(title: "msf",);
               })));
-            }, child: Text("Unanamed Route")),
+            }, child: const Text("Unanamed Route")),
             TextButton(onPressed: (){
               Navigator.pushNamed(context, SecondScreen.routeName,arguments: "Teja");
-            }, child: Text("Named Route")),
+            }, child: const Text("Named Route")),
             TextButton(onPressed: (){
               getData();
-            }, child: Text("Get Data")),
+            }, child: const Text("Get Data")),
             
           ],
         ),
@@ -94,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
       final result = await Navigator.push(
     context,
     MaterialPageRoute(
-      builder: (context) => SendDataScreen(),
+      builder: (context) => const SendDataScreen(),
     ));
     setState(() {
       print(result);
