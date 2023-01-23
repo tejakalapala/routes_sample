@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:routes_sample/login_screen.dart';
 import 'package:routes_sample/my_router.dart';
 import 'package:routes_sample/second_screen.dart';
 import 'package:routes_sample/send_data_screen.dart';
@@ -78,11 +79,14 @@ class _MyHomePageState extends State<MyHomePage> {
               })));
             }, child: const Text("Unanamed Route")),
             TextButton(onPressed: (){
-              Navigator.pushNamed(context, SecondScreen.routeName,arguments: "Teja");
+              Navigator.pushReplacementNamed(context, SecondScreen.routeName,arguments: "Teja");
             }, child: const Text("Named Route")),
             TextButton(onPressed: (){
               getData();
             }, child: const Text("Get Data")),
+            TextButton(onPressed: (){
+              Navigator.pushNamed(context, LoginScreen.routeName,arguments: "Teja");
+            }, child: const Text("Login screen")),
             
           ],
         ),
